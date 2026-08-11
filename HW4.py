@@ -14,20 +14,14 @@ import requests
 
 logging.basicConfig(level=logging.INFO)
 
+# For future. Is not used, for now.
+# load_dotenv()
+# api_key = os.getenv("GEMINI_API_KEY")
+# genai.configure(api_key=api_key)
 
-# Загрузка переменных окружения из файла .env
-load_dotenv()
-
-# Получение API-ключа из переменной окружения
-api_key = os.getenv("GEMINI_API_KEY")
-
-# Инициализация клиента Gemini для работы с API
-genai.configure(api_key=api_key)
-
+# Инициализация локальной модели эмбеддингов
 model_name = "distilbert-base-multilingual-cased"
-
 tokenizer = AutoTokenizer.from_pretrained(model_name)
-
 model = AutoModel.from_pretrained(model_name)
 
 # Памятка:
@@ -66,6 +60,8 @@ def get_embedding(text):
 # Получение embedding для заданных текстовых значений
 vector_1 = get_embedding("Я люблю программирование.")
 vector_2 = get_embedding("Кодинг – это моё хобби.")
+print(vector_1.shape)
+print(vector_2.shape)
 
 # Вывод полученных векторов с поясняющими сообщениями
 # print("Я люблю программирование:", vector_1)
