@@ -368,3 +368,10 @@ pyrightconfig.json
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,pycharm+all,python,flask
 media/
+
+generated_images/
+clip2.py
+clip2_internal_use_only.py
+my_hotel_agent.py
+
+llm-course/
