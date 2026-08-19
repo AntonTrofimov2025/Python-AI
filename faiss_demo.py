@@ -35,7 +35,9 @@ def get_embedding(text):
 
 
 vector_1 = get_embedding("Я люблю программирование.")
-# vector_2 = get_embedding("Кодинг – это моё хобби.")
+print(vector_1)
+vector_2 = get_embedding("Кодинг – это моё хобби.")
+print(vector_2)
 
 # texts_to_index = [
 #     "Кошка сидит на окне",
@@ -68,38 +70,38 @@ vector_1 = get_embedding("Я люблю программирование.")
 #     "Когда есть свободное время, я кодирую.",
 #     "Кодинг - это моё хобби, которым я наслаждаюсь."
 # ]
-
-
+#
+#
 # embeddings_list = [get_embedding(text) for text in texts_to_index]
-# embeddings_array = np.array(embeddings_list)    
-
-
-# dimension = embeddings_array.shape[1]   
-# index = faiss.IndexFlatL2(dimension)    
-# index.add(embeddings_array)             
-
-
-
+# embeddings_array = np.array(embeddings_list)
+#
+#
+# dimension = embeddings_array.shape[1]
+# index = faiss.IndexFlatL2(dimension)
+# index.add(embeddings_array)
+#
+#
+#
 # def semantic_search(query, index, texts, k=2):
 #     """
 #     Выполняет семантический поиск по индексу FAISS.
-
+#
 #     :param query: Поисковый запрос (строка).
 #     :param index: FAISS индекс.
 #     :param texts: Список текстов, которые были проиндексированы.
 #     :param k: Количество ближайших соседей для поиска (по умолчанию 2).
 #     :return: Список из k наиболее релевантных текстов.
 #     """
-#     query_embedding = get_embedding(query).reshape(1, -1)   
-#     D, I = index.search(query_embedding, k)                 
-#     results = [texts[i] for i in I[0]]                      
+#     query_embedding = get_embedding(query).reshape(1, -1)
+#     D, I = index.search(query_embedding, k)
+#     results = [texts[i] for i in I[0]]
 #     return results
-
-
-
+#
+#
+#
 # search_query = "Питание кошек"
 # search_results = semantic_search(search_query, index, texts_to_index, k=4)
-
+#
 # print("\n--- Результаты семантического поиска ---")
 # print(f"Запрос: '{search_query}'")
 # print("Найденные соответствия:")
